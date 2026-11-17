@@ -1,0 +1,51 @@
+# Scout loop fixed; only the tool belt changes across variants.
+# Model / budgets should match Charon + Scout defaults unless noted.
+
+[shared]
+model = "openai/gpt-6-luna"
+base_url_env = "OPENAI_BASE_URL"  # https://charon.internal.exa.ai/v1
+
+[variants.search_only]
+description = "Baseline: Exa search + submit_final_result"
+tools = ["search", "submit_final_result"]
+browser = false
+
+[variants.search_plus_browser]
+description = "Treatment: Exa search + browser primitives + submit"
+tools = [
+  "search",
+  "browser_navigate",
+  "browser_snapshot",
+  "browser_click",
+  "browser_type",
+  "browser_extract",
+  "submit_final_result",
+]
+browser = true
+
+[variants.browser_only]
+description = "Ablation: browser tools only (no Exa search)"
+tools = [
+  "browser_navigate",
+  "browser_snapshot",
+  "browser_click",
+  "browser_type",
+  "browser_extract",
+  "submit_final_result",
+]
+browser = true
+search = false
+
+[variants.search_then_browse]
+description = "Ablation hint: prefer search for discovery, browser for verification"
+tools = [
+  "search",
+  "browser_navigate",
+  "browser_snapshot",
+  "browser_click",
+  "browser_type",
+  "browser_extract",
+  "submit_final_result",
+]
+browser = true
+policy_note = "System nudge: search first to find URLs, then browse to extract live state."
