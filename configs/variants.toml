@@ -24,17 +24,21 @@ tools = [
 browser = true
 
 [variants.browser_only]
-description = "Ablation: browser tools only (no Exa search)"
+description = "Ablation D: C browser depth + write_output_file, no Exa search"
 tools = [
   "browser_navigate",
   "browser_snapshot",
   "browser_click",
   "browser_type",
   "browser_extract",
+  "browser_wait",
+  "browser_scroll",
+  "write_output_file",
   "submit_final_result",
 ]
 browser = true
 search = false
+variant = "browser_only_plus_files"
 
 [variants.search_then_browse]
 description = "Ablation hint: prefer search for discovery, browser for verification"

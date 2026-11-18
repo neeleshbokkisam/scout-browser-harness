@@ -61,7 +61,8 @@ SUBMISSION_INSTRUCTION = (
 )
 NO_TOOL_NUDGE = (
     "Your last response produced no tool call. Call `submit_final_result` if you "
-    "have a complete answer; otherwise continue with the next search tool call."
+    "have a complete answer; otherwise continue with the next research tool call "
+    "(search, browser_*, or write_output_file as appropriate)."
 )
 HOSTED_SEARCH_CONTINUATION = (
     "You used provider-hosted search in the last turn. Continue researching if "

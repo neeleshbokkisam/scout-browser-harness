@@ -44,10 +44,6 @@ export OPENAI_BASE_URL=https://charon.internal.exa.ai/v1
 # model id Scout expects: openai/gpt-6-luna
 ```
 
-## Presentation spine (15 min)
-
-See [PRESENTATION.md](PRESENTATION.md).
-
 ## Remotes
 
 - Origin: `https://github.com/neeleshbokkisam/scout-browser-harness.git` (private)
